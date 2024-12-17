@@ -1,0 +1,296 @@
+/* Theme Colors */
+* {
+    -fx-primary: #8B0000;
+    -fx-secondary: #FFD700;
+    -fx-primary-text: #2C3E50;
+    -fx-light-gray: #F8F9FA;
+    -fx-border-gray: #E9ECEF;
+    -fx-success: #28A745;
+    -fx-danger: #DC3545;
+    -fx-warning: #FFC107;
+    -fx-info: #17A2B8;
+}
+
+/* Main Container */
+.main-container {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 20;
+}
+
+/* Header Section */
+.header-section {
+    -fx-background-color: white;
+    -fx-padding: 20.0px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+    -fx-background-radius: 10;
+}
+
+.view-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.view-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+/* User List */
+.user-list {
+    -fx-background-color: transparent;
+    -fx-padding: 10 0;
+}
+
+.user-card {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+    -fx-spacing: 10;
+}
+
+.user-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15, 0, 0, 3);
+}
+
+.user-avatar {
+    -fx-background-radius: 50%;
+    -fx-min-width: 50;
+    -fx-min-height: 50;
+    -fx-max-width: 50;
+    -fx-max-height: 50;
+}
+
+.user-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.user-role {
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-padding: 5 10;
+    -fx-background-radius: 15;
+    -fx-background-color: #8B0000;
+}
+
+.user-email {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+/* Role Tags */
+.role-tag {
+    -fx-padding: 5 10;
+    -fx-background-radius: 15;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.role-admin {
+    -fx-background-color: -fx-primary;
+}
+
+.role-teacher {
+    -fx-background-color: -fx-info;
+}
+
+.role-counselor {
+    -fx-background-color: -fx-success;
+}
+
+/* Action Buttons */
+.action-button {
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+    -fx-font-size: 13px;
+}
+
+.add-user-button {
+    -fx-background-color: #8B0000;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 8 20;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+
+.add-user-button:hover {
+    -fx-background-color: derive(#8B0000, 10%);
+}
+
+.edit-button {
+    -fx-background-color: #757575;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.edit-button:hover {
+    -fx-background-color: derive(#757575, 10%);
+}
+
+.delete-button {
+    -fx-background-color: #dc3545;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.delete-button:hover {
+    -fx-background-color: derive(#dc3545, 10%);
+}
+
+/* Search and Filter */
+.search-container {
+    -fx-spacing: 10;
+    -fx-padding: 0 0 20 0;
+}
+
+.search-box {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #e0e0e0;
+    -fx-padding: 8 15;
+}
+
+.search-box:focused {
+    -fx-border-color: #8B0000;
+}
+
+.filter-box {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10;
+}
+
+/* Status Indicators */
+.status-indicator {
+    -fx-min-width: 8;
+    -fx-min-height: 8;
+    -fx-max-width: 8;
+    -fx-max-height: 8;
+    -fx-background-radius: 4;
+}
+
+.status-active {
+    -fx-background-color: -fx-success;
+}
+
+.status-inactive {
+    -fx-background-color: -fx-danger;
+}
+
+/* Empty State */
+.empty-state {
+    -fx-padding: 40;
+    -fx-alignment: center;
+}
+
+.empty-state-text {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #666666;
+}
+
+.empty-state-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #999999;
+}
+
+/* Tooltips */
+.tooltip {
+    -fx-background-color: -fx-primary-text;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 5 10;
+    -fx-background-radius: 3;
+}
+
+/* Permission Groups */
+.permission-group {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 8, 0, 0, 1);
+}
+
+.permission-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-primary-text;
+}
+
+.permission-item {
+    -fx-padding: 8 0;
+}
+
+.permission-checkbox {
+    -fx-font-size: 14px;
+}
+
+/* Table Styles */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 5;
+    -fx-padding: 0;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #8B0000;
+    -fx-background-radius: 5 5 0 0;
+    -fx-padding: 5 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 15;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent #e0e0e0 #e0e0e0 transparent;
+    -fx-padding: 0;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: derive(#8B0000, 90%);
+}
+
+.table-view .table-cell {
+    -fx-alignment: center-left;
+    -fx-padding: 10 15;
+    -fx-text-fill: #333333;
+}
+
+/* Loading State */
+.loading-container {
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+}
+
+.loading-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    -fx-progress-color: #8B0000;
+} 

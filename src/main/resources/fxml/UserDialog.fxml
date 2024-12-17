@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20" styleClass="dialog-container" stylesheets="@../css/userDialog.css"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="main.java.com.evsu.violation.controllers.UserDialogController">
+    
+    <padding>
+        <Insets top="25" right="30" bottom="25" left="30"/>
+    </padding>
+
+    <!-- Header -->
+    <VBox styleClass="dialog-header" spacing="10">
+        <Label text="User Details" styleClass="dialog-title"/>
+        <Label text="Enter the details for the user account" styleClass="dialog-subtitle"/>
+    </VBox>
+
+    <!-- Form Content -->
+    <GridPane hgap="15" vgap="20" styleClass="form-grid">
+        <columnConstraints>
+            <ColumnConstraints minWidth="120" prefWidth="120"/>
+            <ColumnConstraints minWidth="250" prefWidth="300" hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <!-- Username -->
+        <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2">
+            <Label text="Username *" styleClass="field-label"/>
+            <TextField fx:id="usernameField" promptText="Enter username" styleClass="text-field-modern"/>
+        </VBox>
+
+        <!-- Full Name -->
+        <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2">
+            <Label text="Full Name *" styleClass="field-label"/>
+            <TextField fx:id="fullNameField" promptText="Enter full name" styleClass="text-field-modern"/>
+        </VBox>
+
+        <!-- Email -->
+        <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="2">
+            <Label text="Email *" styleClass="field-label"/>
+            <TextField fx:id="emailField" promptText="Enter email address" styleClass="text-field-modern"/>
+        </VBox>
+
+        <!-- Password -->
+        <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2">
+            <Label text="Password *" styleClass="field-label"/>
+            <PasswordField fx:id="passwordField" promptText="Enter password" styleClass="text-field-modern"/>
+        </VBox>
+
+        <!-- Role -->
+        <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2">
+            <Label text="Role *" styleClass="field-label"/>
+            <ComboBox fx:id="roleField" promptText="Select role" styleClass="combo-box-modern" maxWidth="Infinity"/>
+        </VBox>
+
+        <!-- Status -->
+        <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="2">
+            <Label text="Status *" styleClass="field-label"/>
+            <ComboBox fx:id="statusField" promptText="Select status" styleClass="combo-box-modern" maxWidth="Infinity"/>
+        </VBox>
+    </GridPane>
+
+    <!-- Required Fields Note -->
+    <HBox styleClass="note-container">
+        <Label text="* Required fields" styleClass="note-text"/>
+    </HBox>
+</VBox> 

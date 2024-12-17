@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="main.java.com.evsu.violation.controllers.TeacherDashboardController"
+            stylesheets="@../css/teacherDashboard.css">
+            
+    <top>
+        <HBox styleClass="header-section" spacing="20" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="20" right="30" bottom="20" left="30"/>
+            </padding>
+            <Label text="Teacher Dashboard" styleClass="page-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Log Out" onAction="#handleLogout" styleClass="secondary-button"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-scroll">
+            <VBox spacing="30">
+                <padding>
+                    <Insets top="30" right="30" bottom="30" left="30"/>
+                </padding>
+                
+                <!-- Quick Actions -->
+                <HBox spacing="20" alignment="CENTER">
+                    <Button text="Log New Violation" onAction="#showViolationDialog" 
+                            styleClass="primary-button"/>
+                    <Button text="Add Student" onAction="#showAddStudentDialog" 
+                            styleClass="primary-button"/>
+                </HBox>
+                
+                <!-- Statistics Cards -->
+                <HBox spacing="20" alignment="CENTER">
+                    <VBox styleClass="stat-card">
+                        <Label text="Today's Violations" styleClass="stat-label"/>
+                        <Label fx:id="todayViolationsLabel" text="0" styleClass="stat-value"/>
+                    </VBox>
+                    <VBox styleClass="stat-card">
+                        <Label text="This Week" styleClass="stat-label"/>
+                        <Label fx:id="weekViolationsLabel" text="0" styleClass="stat-value"/>
+                    </VBox>
+                    <VBox styleClass="stat-card">
+                        <Label text="Pending Cases" styleClass="stat-label"/>
+                        <Label fx:id="pendingCasesLabel" text="0" styleClass="stat-value"/>
+                    </VBox>
+                </HBox>
+                
+                <!-- Recent Violations -->
+                <VBox spacing="15">
+                    <Label text="Recent Violations" styleClass="section-title"/>
+                    <TableView fx:id="recentViolationsTable" VBox.vgrow="ALWAYS" minHeight="400">
+                        <columns>
+                            <TableColumn fx:id="dateColumn" text="Date" prefWidth="100"/>
+                            <TableColumn fx:id="studentIdColumn" text="Student ID" prefWidth="120"/>
+                            <TableColumn fx:id="studentNameColumn" text="Student Name" prefWidth="200"/>
+                            <TableColumn fx:id="categoryColumn" text="Category" prefWidth="150"/>
+                            <TableColumn fx:id="severityColumn" text="Severity" prefWidth="100"/>
+                            <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+                        </columns>
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                        </columnResizePolicy>
+                    </TableView>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+    
+    <bottom>
+        <HBox styleClass="footer-section" alignment="CENTER">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+            <Label text="EVSU OC Student Violation Tracker - Teacher View" styleClass="footer-text"/>
+        </HBox>
+    </bottom>
+    
+</BorderPane> 

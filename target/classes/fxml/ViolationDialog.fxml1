@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<DialogPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="main.java.com.evsu.violation.controllers.ViolationDialogController"
+           stylesheets="@../css/violationsView.css">
+    
+    <content>
+        <VBox spacing="20">
+            <padding>
+                <Insets top="20" right="30" bottom="20" left="30"/>
+            </padding>
+
+            <Text styleClass="dialog-title" text="Edit Violation"/>
+
+            <GridPane hgap="15" vgap="15">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" minWidth="120"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="250"/>
+                </columnConstraints>
+
+                <!-- Student Selection -->
+                <Label text="Student:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <ComboBox fx:id="studentComboBox" promptText="Select Student" 
+                         GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <!-- Category Selection -->
+                <Label text="Category:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <ComboBox fx:id="categoryComboBox" promptText="Select Category" 
+                         GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <!-- Severity Selection -->
+                <Label text="Severity:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <ComboBox fx:id="severityComboBox" promptText="Select Severity" 
+                         GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <!-- Status Selection -->
+                <Label text="Status:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <ComboBox fx:id="statusComboBox" promptText="Select Status" 
+                         GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <!-- Description -->
+                <Label text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <TextArea fx:id="descriptionArea" wrapText="true" prefRowCount="3"
+                         promptText="Enter violation description"
+                         GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                <!-- Resolution Notes -->
+                <Label text="Resolution Notes:" GridPane.columnIndex="0" GridPane.rowIndex="5" fx:id="resolutionLabel"/>
+                <TextArea fx:id="resolutionArea" wrapText="true" prefRowCount="3"
+                         promptText="Enter resolution details"
+                         GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                <!-- Date -->
+                <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                <DatePicker fx:id="violationDate" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+            </GridPane>
+        </VBox>
+    </content>
+
+    <buttonTypes>
+        <ButtonType fx:constant="CANCEL"/>
+        <ButtonType fx:constant="OK"/>
+    </buttonTypes>
+</DialogPane> 

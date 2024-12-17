@@ -1,0 +1,28 @@
+flowchart TD
+    A[Start] --> B[Login]
+    B --> C{Authenticate}
+    C -->|Success| D{User Role}
+    C -->|Failure| E[Display Error]
+    E --> B
+    D -->|Admin| F[Admin Dashboard]
+    D -->|Teacher| G[Teacher Dashboard]
+    D -->|Counselor| H[Counselor Dashboard]
+    F --> I[Manage Categories]
+    F --> J[Generate Reports]
+    F --> K[View Dashboard]
+    G --> L[Log Violation]
+    G --> M[View History]
+    H --> N[Search Violations]
+    H --> O[Generate Reports]
+    L --> P{Submit Violation}
+    P -->|Yes| Q[Save to Database]
+    Q --> R{Auto Notify}
+    R -->|Yes| S[Send Notification]
+    R -->|No| T[End]
+    P -->|No| G
+    M --> U[Display Violation History]
+    N --> V[Display Search Results]
+    J --> W[Export Report]
+    O --> W
+    I --> X[Update Categories]
+    K --> Y[Display Statistics]

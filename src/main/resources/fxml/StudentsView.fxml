@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+         fx:controller="main.java.com.evsu.violation.controllers.StudentsController">
+         
+    <VBox spacing="20" styleClass="content-area" stylesheets="@../css/studentsView.css,@../css/components/loading-spinner.css">
+        <padding>
+            <Insets top="20" right="30" bottom="20" left="30"/>
+        </padding>
+
+        <!-- Header Section -->
+        <VBox spacing="10">
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <VBox>
+                    <Text styleClass="page-title" text="Student Management">
+                        <font>
+                            <Font name="System Bold" size="24"/>
+                        </font>
+                    </Text>
+                    <Text styleClass="page-subtitle" text="Add, edit, or remove student records">
+                        <font>
+                            <Font size="14"/>
+                        </font>
+                    </Text>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button styleClass="primary-button" text="Add New Student" onAction="#handleAddStudent"/>
+            </HBox>
+
+            <!-- Filter Section -->
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <TextField fx:id="searchField" prefWidth="300" promptText="Search students..." styleClass="search-field"/>
+                <ComboBox fx:id="courseFilter" promptText="Filter by Course" styleClass="filter-combo"/>
+                <ComboBox fx:id="yearFilter" promptText="Filter by Year" styleClass="filter-combo"/>
+                <Button fx:id="clearFiltersButton" text="Clear Filters" styleClass="clear-filters-button" onAction="#handleClearFilters"/>
+            </HBox>
+        </VBox>
+
+        <!-- Stats Section -->
+        <HBox spacing="20">
+            <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+                <Label text="Total Students" styleClass="stat-label"/>
+                <Label fx:id="totalStudentsLabel" text="0" styleClass="stat-value"/>
+            </VBox>
+            <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+                <Label text="Active Students" styleClass="stat-label"/>
+                <Label fx:id="activeStudentsLabel" text="0" styleClass="stat-value"/>
+            </VBox>
+            <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+                <Label text="With Violations" styleClass="stat-label"/>
+                <Label fx:id="withViolationsLabel" text="0" styleClass="stat-value"/>
+            </VBox>
+        </HBox>
+
+        <!-- Table Section -->
+        <VBox VBox.vgrow="ALWAYS" styleClass="table-container">
+            <TableView fx:id="studentTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="idNumberColumn" text="ID Number" minWidth="100" prefWidth="120">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="studentID"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="firstNameColumn" text="First Name" minWidth="120" prefWidth="150">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="firstName"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="lastNameColumn" text="Last Name" minWidth="120" prefWidth="150">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="lastName"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="courseColumn" text="Course" minWidth="80" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="course"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="yearLevelColumn" text="Year Level" minWidth="60" prefWidth="80">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="yearLevel"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="contactNumberColumn" text="Contact Number" minWidth="120" prefWidth="150">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="contactNumber"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="parentEmailColumn" text="Parent Email" minWidth="150" prefWidth="200">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="parentEmail"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="actionsColumn" text="Actions" minWidth="120" prefWidth="120"/>
+                </columns>
+                <placeholder>
+                    <Label text="No students found" styleClass="placeholder-label"/>
+                </placeholder>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                </columnResizePolicy>
+            </TableView>
+        </VBox>
+
+        <!-- Status Bar -->
+        <HBox styleClass="status-bar" spacing="20" alignment="CENTER_LEFT">
+            <Label fx:id="statusLabel" text="Ready" styleClass="status-text"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="lastUpdatedLabel" text="Last updated: Never" styleClass="status-text"/>
+        </HBox>
+    </VBox>
+    
+    <!-- Loading Overlay -->
+    <fx:include fx:id="loadingOverlay" source="components/LoadingOverlay.fxml" visible="false" managed="false"/>
+    
+</StackPane> 

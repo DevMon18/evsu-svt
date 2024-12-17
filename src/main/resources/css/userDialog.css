@@ -1,0 +1,121 @@
+.dialog-container {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);
+}
+
+.dialog-header {
+    -fx-padding: 0 0 10 0;
+}
+
+.dialog-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #8B0000;
+}
+
+.dialog-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+.form-grid {
+    -fx-padding: 10 0;
+}
+
+.field-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.text-field-modern {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-padding: 8;
+    -fx-font-size: 13px;
+}
+
+.text-field-modern:focused {
+    -fx-border-color: #8B0000;
+    -fx-effect: dropshadow(gaussian, rgba(139, 0, 0, 0.1), 5, 0, 0, 1);
+}
+
+.combo-box-modern {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-padding: 3;
+    -fx-font-size: 13px;
+}
+
+.combo-box-modern:focused {
+    -fx-border-color: #8B0000;
+    -fx-effect: dropshadow(gaussian, rgba(139, 0, 0, 0.1), 5, 0, 0, 1);
+}
+
+.combo-box-modern .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box-modern .arrow {
+    -fx-background-color: #8B0000;
+}
+
+.note-container {
+    -fx-padding: 10 0 0 0;
+}
+
+.note-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #666666;
+    -fx-font-style: italic;
+}
+
+/* Dialog Button Styles */
+.dialog-pane .button-bar .button {
+    -fx-background-color: #8B0000;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 8 15;
+    -fx-cursor: hand;
+}
+
+.dialog-pane .button-bar .button:hover {
+    -fx-background-color: derive(#8B0000, 10%);
+}
+
+.dialog-pane .button-bar .button:pressed {
+    -fx-background-color: derive(#8B0000, -10%);
+}
+
+.dialog-pane .button-bar .cancel-button {
+    -fx-background-color: #f5f5f5;
+    -fx-text-fill: #333333;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+}
+
+.dialog-pane .button-bar .cancel-button:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+/* Error Styles */
+.error-field {
+    -fx-border-color: #ff0000;
+}
+
+.error-label {
+    -fx-text-fill: #ff0000;
+    -fx-font-size: 12px;
+    -fx-padding: 4 0 0 0;
+} 

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" styleClass="dialog-container" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="main.java.com.evsu.violation.controllers.ViolationDialogController"
+      stylesheets="@../css/dialogs.css">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label fx:id="dialogTitle" styleClass="dialog-title"/>
+    
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints minWidth="100" prefWidth="120"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <!-- Student Selection -->
+        <Label text="Student:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="studentComboBox" GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity"/>
+
+        <!-- Category Selection -->
+        <Label text="Category:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="categoryComboBox" GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="Infinity"/>
+
+        <!-- Severity Selection -->
+        <Label text="Severity:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="severityComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1" maxWidth="Infinity"/>
+
+        <!-- Date Selection -->
+        <Label text="Date:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="violationDate" GridPane.rowIndex="3" GridPane.columnIndex="1" maxWidth="Infinity"/>
+
+        <!-- Description -->
+        <Label text="Description:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextArea fx:id="descriptionArea" GridPane.rowIndex="4" GridPane.columnIndex="1" 
+                  prefRowCount="3" wrapText="true"/>
+
+        <!-- Status Selection -->
+        <Label text="Status:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="statusComboBox" GridPane.rowIndex="5" GridPane.columnIndex="1" maxWidth="Infinity"/>
+    </GridPane>
+
+    <!-- Buttons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Cancel" onAction="#handleCancel" styleClass="cancel-button"/>
+        <Button text="Save" onAction="#handleSave" styleClass="save-button" defaultButton="true"/>
+    </HBox>
+
+</VBox> 

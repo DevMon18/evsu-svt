@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.SVGPath?>
+
+<VBox spacing="20" styleClass="main-container" stylesheets="@../css/categoriesView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.evsu.violation.controllers.CategoriesViewController">
+    
+    <padding>
+        <Insets bottom="20" left="30" right="30" top="20" />
+    </padding>
+
+    <!-- Header Section with Modern Design -->
+    <VBox styleClass="header-section">
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <VBox spacing="5">
+                <Label styleClass="view-title" text="Offense Categories" />
+                <Label styleClass="view-subtitle" text="Manage student offense categories and their severity levels" />
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="addButton" onAction="#handleAddCategory" styleClass="primary-button" text="Add Category">
+                <graphic>
+                    <SVGPath content="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z" 
+                             styleClass="button-icon"/>
+                </graphic>
+            </Button>
+        </HBox>
+    </VBox>
+
+    <!-- Modern Stats Cards -->
+    <FlowPane styleClass="stats-container" hgap="20" vgap="20">
+        <VBox styleClass="stat-card">
+            <Label styleClass="stat-label" text="Total Categories" />
+            <Label fx:id="totalCategoriesLabel" styleClass="stat-value" text="0" />
+        </VBox>
+        <VBox styleClass="stat-card">
+            <Label styleClass="stat-label" text="Active Categories" />
+            <Label fx:id="activeCategoriesLabel" styleClass="stat-value" text="0" />
+        </VBox>
+        <VBox styleClass="stat-card">
+            <Label styleClass="stat-label" text="Last Updated" />
+            <Label fx:id="lastUpdatedLabel" styleClass="stat-value" text="Never" />
+        </VBox>
+    </FlowPane>
+
+    <!-- Search and Filter Section with Modern Design -->
+    <HBox styleClass="search-filter-container" spacing="15">
+        <HBox styleClass="search-box-container" HBox.hgrow="ALWAYS">
+            <TextField fx:id="searchField" promptText="Search categories..." styleClass="search-box" />
+        </HBox>
+        <ComboBox fx:id="severityFilter" promptText="Severity Level" styleClass="filter-combo-box" />
+        <Button onAction="#clearFilters" styleClass="secondary-button" text="Clear">
+            <graphic>
+                <SVGPath content="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" 
+                         styleClass="button-icon"/>
+            </graphic>
+        </Button>
+    </HBox>
+
+    <!-- Modern Table View -->
+    <VBox styleClass="table-container" VBox.vgrow="ALWAYS">
+        <TableView fx:id="categoriesTable" styleClass="modern-table" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="200" text="Category Name" />
+                <TableColumn fx:id="descriptionColumn" prefWidth="300" text="Description" />
+                <TableColumn fx:id="severityColumn" prefWidth="150" text="Severity Level" />
+                <TableColumn fx:id="actionsColumn" prefWidth="100" text="Actions" />
+            </columns>
+            <placeholder>
+                <Label styleClass="table-placeholder" text="No categories found" />
+            </placeholder>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </VBox>
+
+</VBox>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<DialogPane xmlns="http://javafx.com/javafx/21" stylesheets="@../css/dialogs.css"  xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="main.java.com.evsu.violation.controllers.AddStudentDialogController">
+    
+    <headerText>Add New Student</headerText>
+    
+    <content>
+        <VBox spacing="15">
+            <padding>
+                <Insets top="20" right="30" bottom="20" left="30"/>
+            </padding>
+
+            <GridPane hgap="10" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="100" prefWidth="120"/>
+                    <ColumnConstraints minWidth="200" prefWidth="300" hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <!-- ID Number -->
+                <Label text="ID Number *" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="idNumberField" promptText="Enter student ID"
+                    GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label fx:id="idNumberError" styleClass="error-label" visible="false"
+                    GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <!-- First Name -->
+                <Label text="First Name *" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="firstNameField" promptText="Enter first name"
+                    GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Label fx:id="firstNameError" styleClass="error-label" visible="false"
+                    GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <!-- Last Name -->
+                <Label text="Last Name *" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <TextField fx:id="lastNameField" promptText="Enter last name"
+                    GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <Label fx:id="lastNameError" styleClass="error-label" visible="false"
+                    GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                <!-- Course -->
+                <Label text="Course *" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                <ComboBox fx:id="courseField" promptText="Select course"
+                    GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                <Label fx:id="courseError" styleClass="error-label" visible="false"
+                    GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+                <!-- Year Level -->
+                <Label text="Year Level *" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+                <ComboBox fx:id="yearLevelField" promptText="Select year level"
+                    GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+                <Label fx:id="yearLevelError" styleClass="error-label" visible="false"
+                    GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+
+                <!-- Contact Number -->
+                <Label text="Contact Number *" GridPane.columnIndex="0" GridPane.rowIndex="10"/>
+                <TextField fx:id="contactNumberField" promptText="Enter contact number"
+                    GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+                <Label fx:id="contactError" styleClass="error-label" visible="false"
+                    GridPane.columnIndex="1" GridPane.rowIndex="11"/>
+
+                <!-- Parent Email -->
+                <Label text="Parent Email *" GridPane.columnIndex="0" GridPane.rowIndex="12"/>
+                <TextField fx:id="parentEmailField" promptText="Enter parent's email"
+                    GridPane.columnIndex="1" GridPane.rowIndex="12"/>
+                <Label fx:id="emailError" styleClass="error-label" visible="false"
+                    GridPane.columnIndex="1" GridPane.rowIndex="13"/>
+            </GridPane>
+
+            <Label fx:id="errorLabel" styleClass="error-label" visible="false" wrapText="true"/>
+            <Label text="* Required fields" style="-fx-font-size: 12px; -fx-text-fill: #666666;"/>
+            
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Cancel" onAction="#handleCancel" styleClass="secondary-button"/>
+                <Button text="Save" onAction="#handleSave" styleClass="primary-button" defaultButton="true"/>
+            </HBox>
+        </VBox>
+    </content>
+</DialogPane> 

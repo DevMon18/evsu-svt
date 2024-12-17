@@ -1,0 +1,33 @@
+erDiagram
+    USER ||--o{ VIOLATION : logs
+    USER {
+        int userID PK
+        string username
+        string password
+        string role
+        string email
+    }
+    STUDENT ||--o{ VIOLATION : receives
+    STUDENT {
+        int studentID PK
+        string firstName
+        string lastName
+        string email
+        string parentEmail
+    }
+    VIOLATION {
+        int violationID PK
+        int studentID FK
+        int userID FK
+        int categoryID FK
+        date violationDate
+        string description
+        string severity
+        string status
+    }
+    OFFENSE_CATEGORY ||--o{ VIOLATION : categorizes
+    OFFENSE_CATEGORY {
+        int categoryID PK
+        string categoryName
+        string defaultSeverity
+    }

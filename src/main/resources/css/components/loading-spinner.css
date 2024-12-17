@@ -1,0 +1,49 @@
+/* Loading Overlay Styles */
+.loading-overlay {
+    -fx-background-color: rgba(0, 0, 0, 0.4);
+    -fx-alignment: center;
+}
+
+.loading-container {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+    -fx-alignment: center;
+    -fx-min-width: 200;
+}
+
+.loading-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+.progress-indicator {
+    -fx-progress-color: #8B0000;
+}
+
+/* Error Message Styles */
+.error-container {
+    -fx-background-color: #FFE5E5;
+    -fx-border-color: #FF8080;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 10;
+    -fx-spacing: 5;
+    -fx-alignment: center-left;
+}
+
+.error-icon {
+    -fx-fill: #CC0000;
+}
+
+.error-message {
+    -fx-text-fill: #CC0000;
+    -fx-font-size: 12px;
+}
+
+.error-details {
+    -fx-text-fill: #666666;
+    -fx-font-size: 11px;
+} 

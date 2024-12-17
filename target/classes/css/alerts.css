@@ -1,0 +1,92 @@
+.custom-alert {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+}
+
+.custom-alert > *.header-panel {
+    -fx-background-color: white;
+}
+
+.custom-alert:error *.header-panel {
+    -fx-background-color: #ffebee;
+}
+
+.custom-alert:warning *.header-panel {
+    -fx-background-color: #fff3e0;
+}
+
+.custom-alert .content {
+    -fx-padding: 15;
+    -fx-font-size: 14px;
+}
+
+.custom-alert .button-bar {
+    -fx-padding: 10 0 0 0;
+}
+
+.custom-alert .button {
+    -fx-background-radius: 20;
+    -fx-min-width: 80px;
+    -fx-padding: 8 20;
+}
+
+.custom-alert .primary-button {
+    -fx-background-color: #8B0000;
+    -fx-text-fill: white;
+}
+
+.custom-alert .primary-button:hover {
+    -fx-background-color: derive(#8B0000, 10%);
+}
+
+.custom-alert .cancel-button {
+    -fx-background-color: #f5f5f5;
+    -fx-text-fill: #333333;
+    -fx-border-color: #e0e0e0;
+}
+
+.custom-alert .cancel-button:hover {
+    -fx-background-color: #eeeeee;
+}
+
+.toast {
+    -fx-background-color: rgba(0, 0, 0, 0.8);
+    -fx-text-fill: white;
+    -fx-padding: 10 20;
+    -fx-background-radius: 20;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 2);
+}
+
+.toast .content {
+    -fx-text-fill: white;
+    -fx-padding: 0;
+}
+
+.toast .button-bar {
+    -fx-max-height: 0;
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+}
+
+/* Animation classes */
+.fade-in {
+    -fx-opacity: 0;
+    -fx-animation: fadeIn 0.3s ease-in forwards;
+}
+
+.slide-up {
+    -fx-translate-y: 20;
+    -fx-animation: slideUp 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { -fx-opacity: 0; }
+    to { -fx-opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { -fx-translate-y: 20; }
+    to { -fx-translate-y: 0; }
+} 

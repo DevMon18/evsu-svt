@@ -1,0 +1,192 @@
+/* Teacher Dashboard Theme Colors */
+* {
+    -evsu-primary: #8B0000;
+    -evsu-primary-dark: derive(-evsu-primary, -20%);
+    -evsu-primary-light: derive(-evsu-primary, 80%);
+    -evsu-secondary: #FFD700;
+    -evsu-text-light: #FFFFFF;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+/* Main Container */
+.root {
+    -fx-background-color: -evsu-primary;
+}
+
+/* Header Styles */
+.header-section {
+    -fx-background-color: linear-gradient(to right, -evsu-primary-dark, -evsu-primary);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 2);
+}
+
+.page-title {
+    -fx-text-fill: -evsu-text-light;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+/* Content Area */
+.content-scroll {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+}
+
+.content-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Action Buttons */
+.primary-button {
+    -fx-background-color: -evsu-secondary;
+    -fx-text-fill: -evsu-primary;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 24;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 1);
+}
+
+.primary-button:hover {
+    -fx-background-color: derive(-evsu-secondary, -10%);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 6, 0, 0, 2);
+}
+
+.secondary-button {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-text-fill: -evsu-text-light;
+    -fx-font-size: 14px;
+    -fx-padding: 12 24;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-border-color: -evsu-text-light;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+}
+
+.secondary-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Statistics Cards */
+.stat-card {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-padding: 20;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0, 0, 2);
+    -fx-min-width: 200;
+    -fx-alignment: CENTER;
+    -fx-spacing: 10;
+}
+
+.stat-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 3);
+    -fx-background-color: white;
+}
+
+.stat-label {
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.stat-value {
+    -fx-text-fill: -evsu-primary;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+
+/* Section Title */
+.section-title {
+    -fx-text-fill: -evsu-text-light;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0;
+}
+
+/* Table Styles */
+.table-view {
+
+    -fx-background-radius: 10;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, -evsu-primary-dark, -evsu-primary);
+    -fx-background-radius: 10 10 0 0;
+    -fx-padding: 5;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 45px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: -evsu-text-light;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-border-color: transparent transparent rgba(0,0,0,0.05) transparent;
+    -fx-text-fill: #333333;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: derive(-evsu-secondary, 70%);
+    -fx-text-fill: -evsu-primary;
+}
+
+.table-view .placeholder {
+    -fx-background-color: transparent;
+}
+
+.table-view .placeholder .label {
+    -fx-text-fill: -evsu-text-light;
+    -fx-font-style: italic;
+}
+
+/* Footer */
+.footer-section {
+    -fx-background-color: -evsu-primary-dark;
+}
+
+.footer-text {
+    -fx-text-fill: rgba(255, 255, 255, 0.8);
+    -fx-font-size: 12px;
+}
+
+/* Scrollbar Styling */
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-background-radius: 5;
+}
+
+.scroll-bar:vertical .thumb:hover,
+.scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.4);
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+} 

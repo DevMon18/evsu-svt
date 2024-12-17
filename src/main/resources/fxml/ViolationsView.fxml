@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/violationsView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.evsu.violation.controllers.ViolationsController">
+    
+    <VBox spacing="20" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <padding>
+            <Insets bottom="20" left="20" right="20" top="20" />
+        </padding>
+
+        <!-- Title Section -->
+        <HBox alignment="CENTER_LEFT" spacing="15">
+            <Text styleClass="dialog-title" text="Student Violations" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="addButton" onAction="#handleAddViolation" styleClass="button-primary" text="Add Violation" />
+        </HBox>
+
+        <!-- Filters Section -->
+        <VBox spacing="15" styleClass="filter-section">
+            <!-- Search and Add Button -->
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <TextField fx:id="searchField" prefHeight="35.0" prefWidth="584.0" promptText="Search by student name..." HBox.hgrow="ALWAYS" />
+            </HBox>
+
+            <!-- Filter Controls -->
+            <GridPane hgap="15" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="80.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="461.59999999999997" minWidth="150.0" prefWidth="273.999951171875" />
+                    <ColumnConstraints maxWidth="197.60004882812495" minWidth="0.0" prefWidth="43.19998779296873" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.9999755859375" minWidth="122.39999999999998" prefWidth="281.6000122070312" />
+                </columnConstraints>
+
+                <Label text="Category:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <ComboBox fx:id="categoryFilter" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                
+                <Label text="Status:" GridPane.rowIndex="1" />
+                <ComboBox fx:id="statusFilter" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                
+                <Label text="To:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <DatePicker fx:id="endDatePicker" maxWidth="Infinity" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <DatePicker fx:id="startDatePicker" maxWidth="Infinity" prefHeight="38.0" prefWidth="88.0" GridPane.columnIndex="3" />
+                
+                <Label text="From:" GridPane.columnIndex="2" />
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+                <Button onAction="#resetFilters" styleClass="button-secondary" text="Reset Filters" />
+            </HBox>
+        </VBox>
+
+        <!-- Table Section -->
+        <TableView fx:id="violationsTable" maxHeight="400.0" minHeight="400.0" styleClass="violations-table" VBox.vgrow="ALWAYS">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+            <columns>
+                <TableColumn fx:id="studentNameColumn" styleClass="column-header" text="STUDENT NAME" />
+                <TableColumn fx:id="categoryColumn" styleClass="column-header" text="VIOLATION CATEGORY" />
+                <TableColumn fx:id="severityColumn" styleClass="column-header" text="SEVERITY" />
+                <TableColumn fx:id="descriptionColumn" styleClass="column-header" text="DESCRIPTION" />
+                <TableColumn fx:id="statusColumn" styleClass="column-header" text="STATUS" />
+                <TableColumn fx:id="dateColumn" styleClass="column-header" text="DATE" />
+                <TableColumn fx:id="addedByColumn" styleClass="column-header" text="ADDED BY" />
+            </columns>
+            <placeholder>
+                <VBox alignment="CENTER" styleClass="empty-state">
+                    <Text styleClass="empty-state-text" text="No violations found" />
+                    <Text styleClass="empty-state-subtext" text="Add a new violation using the button above" />
+                </VBox>
+            </placeholder>
+        </TableView>
+
+        <!-- Action Buttons -->
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <Button fx:id="editButton" onAction="#handleEditViolation" styleClass="button-secondary" text="Edit" />
+            <Button fx:id="deleteButton" onAction="#handleDeleteViolation" styleClass="button-danger" text="Delete" />
+        </HBox>
+    </VBox>
+</AnchorPane>

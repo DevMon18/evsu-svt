@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<StackPane fx:id="mainStackPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+         fx:controller="main.java.com.evsu.violation.controllers.LoginController">
+    
+    <!-- Main Content -->
+    <AnchorPane fx:id="rootPane" styleClass="root" stylesheets="@../css/login.css,@../css/components/loading-spinner.css">
+        <VBox styleClass="content-container" alignment="CENTER" spacing="20" 
+              AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" 
+              AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+            
+            <!-- Title Section -->
+            <VBox alignment="CENTER" spacing="5">
+                <!-- Logo -->
+                <ImageView fx:id="logoImage" fitHeight="120" fitWidth="120" preserveRatio="true">
+                    <Image url="@../images/evsu-logo.png"/>
+                </ImageView>
+                <Label styleClass="title-label" text="EASTERN VISAYAS STATE UNIVERSITY" />
+                <Label styleClass="title-label" text="ORMOC CAMPUS" />
+                <Label styleClass="subtitle-label" text="Student Violation Tracker" />
+            </VBox>
+
+            <!-- Login Form -->
+            <VBox styleClass="form-container" spacing="15" maxWidth="350">
+                <Label styleClass="form-label" text="Username" />
+                <TextField fx:id="usernameField" styleClass="text-field" promptText="Enter your username"/>
+
+                <Label styleClass="form-label" text="Password" />
+                <PasswordField fx:id="passwordField" styleClass="text-field" promptText="Enter your password"/>
+
+                <Button fx:id="loginButton" styleClass="login-button" text="LOGIN" onAction="#handleLogin" />
+                
+                <!-- Error Container -->
+                <VBox fx:id="errorContainer" styleClass="error-container" visible="false" managed="false">
+                    <Label fx:id="errorMessageLabel" styleClass="error-message" wrapText="true" />
+                    <Label fx:id="errorDetailsLabel" styleClass="error-details" wrapText="true" />
+                </VBox>
+            </VBox>
+
+            <!-- Footer -->
+            <VBox alignment="CENTER" spacing="5">
+                <Label styleClass="footer-text" text="Office of Student Affairs" />
+                <Label styleClass="copyright-text" text="© 2024 Eastern Visayas State University" />
+            </VBox>
+        </VBox>
+    </AnchorPane>
+    
+    <!-- Loading Overlay -->
+    <StackPane fx:id="loadingContainer" styleClass="loading-overlay" visible="false" managed="false">
+        <VBox styleClass="loading-container">
+            <ProgressIndicator />
+            <Label fx:id="loadingText" styleClass="loading-text" text="Signing in..." />
+        </VBox>
+    </StackPane>
+</StackPane> 

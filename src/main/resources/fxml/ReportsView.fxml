@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+
+<VBox spacing="20" stylesheets="@../css/reportsView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="main.java.com.evsu.violation.controllers.ReportsController">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Top Section with Filters and Export Buttons -->
+    <HBox spacing="15" alignment="CENTER">
+        <HBox spacing="15" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+            <DatePicker fx:id="startDatePicker" promptText="Start Date"/>
+            <DatePicker fx:id="endDatePicker" promptText="End Date"/>
+            <ComboBox fx:id="categoryFilter" promptText="Category"/>
+            <ComboBox fx:id="courseFilter" promptText="Course"/>
+            <ComboBox fx:id="yearLevelFilter" promptText="Year Level"/>
+            <Button text="Generate Report" onAction="#generateReport" styleClass="generate-button"/>
+        </HBox>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button text="EXPORT PDF" onAction="#exportToPDF" styleClass="export-button"/>
+        </HBox>
+    </HBox>
+
+    <!-- Statistics Cards -->
+    <FlowPane styleClass="stats-container" hgap="20" vgap="20">
+        <VBox styleClass="stat-card">
+            <Label text="Total" styleClass="stat-label"/>
+            <Label text="Violations" styleClass="stat-label"/>
+            <Label fx:id="totalViolationsLabel" text="0" styleClass="stat-value"/>
+        </VBox>
+        <VBox styleClass="stat-card">
+            <Label text="Active Cases" styleClass="stat-label"/>
+            <Label fx:id="activeViolationsLabel" text="0" styleClass="stat-value"/>
+        </VBox>
+        <VBox styleClass="stat-card">
+            <Label text="Resolved" styleClass="stat-label"/>
+            <Label text="Cases" styleClass="stat-label"/>
+            <Label fx:id="resolvedViolationsLabel" text="0" styleClass="stat-value"/>
+        </VBox>
+        <VBox styleClass="stat-card">
+            <Label text="Total Students" styleClass="stat-label"/>
+            <Label fx:id="totalStudentsLabel" text="0" styleClass="stat-value"/>
+        </VBox>
+        <VBox styleClass="stat-card">
+            <Label text="Resolution" styleClass="stat-label"/>
+            <Label text="Rate" styleClass="stat-label"/>
+            <Label fx:id="resolutionRateLabel" text="0%" styleClass="stat-value"/>
+        </VBox>
+    </FlowPane>
+
+    <!-- Charts Grid -->
+    <ScrollPane fitToWidth="true" styleClass="chart-scroll-pane" VBox.vgrow="ALWAYS" minHeight="800">
+        <GridPane hgap="20" vgap="20" styleClass="charts-grid">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50"/>
+                <ColumnConstraints percentWidth="50"/>
+            </columnConstraints>
+            
+            <rowConstraints>
+                <RowConstraints minHeight="400" prefHeight="400"/>
+                <RowConstraints minHeight="400" prefHeight="400"/>
+                <RowConstraints minHeight="400" prefHeight="400"/>
+                <RowConstraints minHeight="500" prefHeight="500"/>
+            </rowConstraints>
+
+            <!-- Trends Chart -->
+            <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="chart-container">
+                <BarChart fx:id="trendsBarChart" title="Violation Trends" prefHeight="400">
+                    <xAxis><CategoryAxis label="Date"/></xAxis>
+                    <yAxis><NumberAxis label="Count"/></yAxis>
+                </BarChart>
+            </VBox>
+
+            <!-- Course Distribution -->
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="chart-container">
+                <BarChart fx:id="courseBarChart" title="Violations by Course" prefHeight="400">
+                    <xAxis><CategoryAxis label="Course"/></xAxis>
+                    <yAxis><NumberAxis label="Count"/></yAxis>
+                </BarChart>
+            </VBox>
+
+            <!-- Year Level Distribution -->
+            <VBox GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="chart-container">
+                <StackedBarChart fx:id="yearLevelChart" title="Violations by Year Level" prefHeight="400">
+                    <xAxis><CategoryAxis label="Year Level"/></xAxis>
+                    <yAxis><NumberAxis label="Count"/></yAxis>
+                </StackedBarChart>
+            </VBox>
+
+            <!-- Category Distribution -->
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="chart-container">
+                <PieChart fx:id="violationsPieChart" title="Violations by Category" prefHeight="400"/>
+            </VBox>
+
+            <!-- Period Comparison -->
+            <VBox GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="chart-container">
+                <LineChart fx:id="comparisonChart" title="Period Comparison" prefHeight="400">
+                    <xAxis><CategoryAxis label="Date"/></xAxis>
+                    <yAxis><NumberAxis label="Count"/></yAxis>
+                </LineChart>
+            </VBox>
+
+            <!-- Resolution Time Analysis -->
+            <VBox GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="chart-container">
+                <StackedBarChart fx:id="resolutionTimeChart" title="Resolution Time Analysis" prefHeight="400">
+                    <xAxis><CategoryAxis label="Resolution Time"/></xAxis>
+                    <yAxis><NumberAxis label="Count"/></yAxis>
+                </StackedBarChart>
+            </VBox>
+
+            <!-- Severity Radar Chart -->
+            <VBox GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2" 
+                 styleClass="chart-container" alignment="CENTER">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <Label text="Severity Distribution" styleClass="chart-title"/>
+                <Canvas fx:id="radarChartCanvas" width="500" height="500"/>
+            </VBox>
+        </GridPane>
+    </ScrollPane>
+</VBox> 

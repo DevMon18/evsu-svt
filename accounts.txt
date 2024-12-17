@@ -1,0 +1,14 @@
+SuperAdmin
+username: admin
+password: Admin@123
+
+Teacher
+username: teacher1
+password: Admin@123
+
+FOR SMTP BELOW
+
+email: violationstudent@gmail.com
+password: violation@123
+
+app password: qvbe invr zqay fcoo

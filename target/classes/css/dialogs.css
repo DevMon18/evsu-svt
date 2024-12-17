@@ -1,0 +1,82 @@
+/* Theme Colors */
+* {
+    -fx-primary: #8B0000;
+    -fx-secondary: #FFD700;
+    -fx-primary-text: #2C3E50;
+    -fx-light-gray: #F8F9FA;
+    -fx-border-gray: #E9ECEF;
+    -fx-success: #28A745;
+    -fx-danger: #DC3545;
+    -fx-warning: #FFC107;
+    -fx-info: #17A2B8;
+}
+
+/* Dialog Container */
+.dialog-pane {
+    -fx-background-color: white;
+    -fx-padding: 20;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: white;
+    -fx-padding: 0 0 10 0;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.dialog-pane .content {
+    -fx-padding: 0;
+}
+
+.dialog-pane .button-bar {
+    -fx-padding: 20 0 0 0;
+}
+
+.dialog-pane .button {
+    -fx-background-radius: 4;
+    -fx-padding: 8 15;
+    -fx-cursor: hand;
+}
+
+.dialog-pane .button:default {
+    -fx-background-color: #8B0000;
+    -fx-text-fill: white;
+}
+
+.dialog-pane .button:default:hover {
+    -fx-background-color: derive(#8B0000, 10%);
+}
+
+.dialog-pane .button:cancel {
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #333333;
+}
+
+.dialog-pane .button:cancel:hover {
+    -fx-background-color: derive(#e0e0e0, -10%);
+}
+
+.error-label {
+    -fx-text-fill: #dc3545;
+    -fx-font-size: 12px;
+    -fx-padding: 4 0 0 0;
+}
+
+.text-field, .combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 4;
+    -fx-padding: 8;
+}
+
+.text-field:focused, .combo-box:focused {
+    -fx-border-color: #8B0000;
+}
+
+.text-field.error, .combo-box.error {
+    -fx-border-color: #dc3545;
+} 

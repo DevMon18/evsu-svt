@@ -1,0 +1,116 @@
+/* Theme Colors */
+* {
+    -evsu-primary: #8B0000;
+    -evsu-primary-dark: #660000;
+    -evsu-text: white;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+/* Root Styles */
+.root {
+    -fx-background-color: -evsu-primary;
+}
+
+/* Content Container */
+.content-container {
+    -fx-padding: 40;
+    -fx-spacing: 30;
+}
+
+/* Title Styles */
+.title-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -evsu-text;
+}
+
+.subtitle-label {
+    -fx-font-size: 18px;
+    -fx-text-fill: #FFD700;
+    -fx-padding: 10 0 20 0;
+}
+
+/* Form Styles */
+.form-container {
+    -fx-spacing: 8;
+}
+
+.form-label {
+    -fx-text-fill: -evsu-text;
+    -fx-font-size: 14px;
+    -fx-opacity: 0.9;
+}
+
+.text-field, .password-field {
+    -fx-background-color: white;
+    -fx-background-radius: 3;
+    -fx-padding: 10 15;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #666666;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-background-color: white;
+}
+
+/* Login Button */
+.login-button {
+    -fx-background-color: rgba(0, 0, 0, 0.2);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 0;
+    -fx-background-radius: 3;
+    -fx-cursor: hand;
+    -fx-max-width: infinity;
+    -fx-font-weight: bold;
+}
+
+.login-button:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+}
+
+.login-button:pressed {
+    -fx-background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    -fx-progress-color: white;
+}
+
+.progress-indicator .spinner {
+    -fx-background-color: transparent;
+}
+
+/* Close Button */
+.close-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-cursor: hand;
+    -fx-padding: 5 10;
+}
+
+.close-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Error Message */
+.error-label {
+    -fx-text-fill: #00FF00;
+    -fx-font-size: 12px;
+    -fx-padding: 5 0;
+}
+
+/* Footer */
+.footer-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #FFD700;
+    -fx-padding: 20 0 0 0;
+}
+
+.copyright-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: -evsu-text;
+    -fx-opacity: 0.8;
+} 

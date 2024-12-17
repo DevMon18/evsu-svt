@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<StackPane styleClass="loading-overlay" visible="false" managed="false"
+    xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <VBox styleClass="loading-container" alignment="CENTER" spacing="10">
+        <ProgressIndicator />
+        <Label styleClass="loading-text" text="Loading..." />
+    </VBox>
+</StackPane> 
